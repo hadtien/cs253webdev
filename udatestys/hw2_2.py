@@ -91,7 +91,7 @@ class MainPage(webapp2.RequestHandler):
             pwd_error = "That wasn't a valid password."
         elif password != verify:
             pwd_error_match = "Your passwords didn't match."
-        if not EMAIL_RE.match(email):
+        if email and not EMAIL_RE.match(email): #email optional
             email_error = "That's not a valid email."
 
         if uname_error or pwd_error or pwd_error_match or email_error:
