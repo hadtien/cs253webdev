@@ -31,8 +31,8 @@ class NewPost(Handler):
     def get(self):
         self.render("new_entry.html")
     def post(self):
-        title = self.request.get("title")
-        body = self.request.get("body")
+        title = self.request.get("subject")
+        body = self.request.get("content")
         if title and body:
             a = Entry(title = title, body = body)
             a.put()
